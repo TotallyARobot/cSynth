@@ -1,2 +1,2 @@
 # cSynth
-A Synthasizer built in c using the SDL library
+A basic synthasizer built in c using the SDL library
