@@ -10,7 +10,7 @@ list notelist;
 
 double wavOut (list note)
 {
-	double wavval;
+	double wavval = 0;
 	for (int i = 0; i <= note.used; i++){
 		if (note.notes[i].ty == 'q')
 			wavval += (sin(note.notes[i].time)>0? 1: -1)/note.used;
@@ -30,8 +30,6 @@ void callback(void* userdata, Uint8* stream, int len) {
 	for(int i = 0; i < len; i++) //Fill array with frequencies, mathy-math stuff
 	{
 		snd[i] = wavOut(notelist) * 12000;
-		//I DONT KNOW WHY I DON'T WANT TO KNOW WHY BUT FOR WHAT EVER REASON I NEED TO INCORPERATE THIS IN THE FUNCTION OR THE ENTIRE THING SOUNDS LIKE A SOUND EFFECT IN A HORROR MOVIE
-		printf("\n");
 		//wave types
 		//sin wave
 		//printf("%f\n", sin(time));

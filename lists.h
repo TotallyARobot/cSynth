@@ -15,3 +15,4 @@ typedef struct{
 void addNote (list *n, notes element);
 void listInit (list *n, int initSize);
 void removeNote (list *n);
+void freeList (list *n);

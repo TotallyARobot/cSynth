@@ -18,5 +18,12 @@ void addNote (list *n, notes element){
 
 void removeNote (list *n){
     notes empty;
-    n->notes[n->used--] = empty;
+    n->used--;
+    n->notes[n->used] = empty;
+}
+
+void freeList(list *n){
+    free(n->notes);
+    n->notes = NULL;
+    n->used = n->size = 0;
 }
